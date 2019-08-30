@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Todos</h1>
+    <%= link_to "Add a new todo", new_list_path %>
+
+    <ul class="todos">
+      <% @lists.each do |list| %>
+        <li> <%= list.title %> </li>
+      <% end %>
+    </ul>
+  </body>
+</html>
