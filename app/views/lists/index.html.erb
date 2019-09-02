@@ -9,7 +9,7 @@
     <%= link_to "Add a new todo", new_list_path %>
 
     <ul class="todos">
-      <% @lists.each do |list| %>
+      <% @lists&.each do |list| %>
         <li> <%= list.title %> </li>
       <% end %>
     </ul>
