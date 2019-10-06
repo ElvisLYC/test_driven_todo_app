@@ -2,7 +2,7 @@ class ListsController < ApplicationController
   before_action :authenticate
 
   def index
-    @lists = List.all
+    @lists = List.where(email: session[:current_email])
   end
 
   def new
@@ -10,7 +10,7 @@ class ListsController < ApplicationController
   end
 
   def create
-    List.create(list_params)
+    List.create(list_params.merge(email: session[:current_email]))
     redirect_to lists_path
   end
 
